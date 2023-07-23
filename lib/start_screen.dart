@@ -5,6 +5,7 @@ class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
 
   final void Function() startQuiz;
+
   @override
   Widget build(context) {
     return Center(
@@ -14,28 +15,32 @@ class StartScreen extends StatelessWidget {
           Image.asset(
             'assets/images/quiz-logo.png',
             width: 300,
-            color: const Color.fromARGB(146, 255, 255, 255),
+            color: const Color.fromARGB(150, 255, 255, 255),
           ),
-          const SizedBox(
-            height: 80,
-          ),
+          // Opacity(
+          //   opacity: 0.6,
+          //   child: Image.asset(
+          //     'assets/images/quiz-logo.png',
+          //     width: 300,
+          //   ),
+          // ),
+          const SizedBox(height: 80),
           Text(
-            "Manga Q & A",
+            'Learn Flutter the fun way!',
             style: GoogleFonts.lato(
-              color: Colors.white,
-              fontSize: 32,
+              color: const Color.fromARGB(255, 237, 223, 252),
+              fontSize: 24,
             ),
           ),
           const SizedBox(height: 30),
           OutlinedButton.icon(
-              onPressed: () {
-                startQuiz();
-              },
-              style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.white,
-              ),
-              icon: const Icon(Icons.arrow_right_alt),
-              label: const Text('Start Quiz'))
+            onPressed: startQuiz,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+            ),
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text('Start Quiz'),
+          )
         ],
       ),
     );
